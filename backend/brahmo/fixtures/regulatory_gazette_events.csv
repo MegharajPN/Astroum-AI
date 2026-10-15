@@ -1,0 +1,13 @@
+event_id,notification_id,date_published,effective_date,action,target_type,target_description,supersedes_event_id,note
+EV001,GSR 704(E),2018-09-07,2018-09-12,PROHIBITED,FDC,Nimesulide + Paracetamol (all strengths),,Prohibition of FDC under 26A
+EV002,HC-STAY-2019-114,2019-02-11,2019-02-11,STAY_GRANTED,FDC,Nimesulide + Paracetamol (all strengths),EV001,High Court interim stay on EV001
+EV003,GSR 411(E),2023-06-02,2023-06-15,PROHIBITED,FDC,Nimesulide + Paracetamol (all strengths),EV002,Re-prohibition; supersedes stay EV002
+EV004,GSR 218(E),2016-03-10,2016-03-10,PROHIBITED,FDC,Chlorpheniramine + Phenylephrine + Caffeine + Paracetamol (specific ratio),,326 FDC batch order
+EV005,GSR 909(E),2024-08-21,2024-09-01,RESTRICTED,INGREDIENT,Ranitidine (all products),,NDMA impurity review; restricted pending data
+EV006,GSR 1012(E),2025-01-17,2025-02-01,PROHIBITED,INGREDIENT,Ranitidine (all products),EV005,Prohibition; supersedes restriction EV005
+EV007,GSR 133(E),2022-02-18,2022-03-01,PROHIBITED,FDC,Cetirizine + Phenylephrine + Paracetamol + Caffeine (4-way),,Irrational FDC
+EV008,GSR 556(E),2021-08-05,2021-08-20,RESTRICTED,INGREDIENT,Tramadol (Schedule H1 enforcement),,H1 dispensing restriction
+EV009,GSR 777(E),2020-12-11,2021-01-01,PROHIBITED,FDC,Aceclofenac + Paracetamol + Rabeprazole,,Irrational FDC
+EV010,GSR 640(E),2019-10-03,2019-10-15,WITHDRAWN,PRODUCT,Ofloxacin + Ornidazole Suspension (paediatric),,Paediatric suspension withdrawal
+EV011,GSR 388(E),2024-05-06,2024-05-20,PROHIBITED,FDC,Codeine-based cough FDCs (paediatric),,Paediatric prohibition
+EV012,GSR 850(E),2025-11-02,2025-11-20,RESTRICTED,FDC,Ibuprofen + Paracetamol (paediatric suspensions only),,Paediatric restriction only; adult tablets unaffected

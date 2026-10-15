@@ -1,0 +1,16 @@
+ingredient_a,ingredient_b,severity,note,source_tag
+Warfarin,Aspirin,SEVERE,Additive bleeding risk,public-high-priority-2026
+Warfarin,Azithromycin,SEVERE,INR elevation; bleeding,public-high-priority-2026
+Warfarin,Amiodarone,SEVERE,Marked INR rise,public-high-priority-2026
+Methotrexate,Trimethoprim,SEVERE,Bone-marrow suppression,public-high-priority-2026
+Sildenafil,Nitrates,SEVERE,Profound hypotension,public-high-priority-2026
+Clarithromycin,Simvastatin,SEVERE,Rhabdomyolysis risk,public-high-priority-2026
+Clarithromycin,Colchicine,SEVERE,Colchicine toxicity,public-high-priority-2026
+Tramadol,Fluoxetine,SEVERE,Serotonin syndrome; seizure threshold,public-high-priority-2026
+Lithium,Ibuprofen,SEVERE,Lithium toxicity,public-high-priority-2026
+Digoxin,Clarithromycin,SEVERE,Digoxin toxicity,public-high-priority-2026
+Theophylline,Ciprofloxacin,SEVERE,Theophylline toxicity,public-high-priority-2026
+Spironolactone,Potassium Chloride,SEVERE,Hyperkalemia,public-high-priority-2026
+Enalapril,Potassium Chloride,SEVERE,Hyperkalemia,public-high-priority-2026
+Carbamazepine,Erythromycin,SEVERE,Carbamazepine toxicity,public-high-priority-2026
+Dabigatran,Ketoconazole,SEVERE,Bleeding; P-gp inhibition,public-high-priority-2026

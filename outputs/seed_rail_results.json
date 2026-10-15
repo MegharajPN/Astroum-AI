@@ -1,0 +1,1322 @@
+{
+  "RX01": {
+    "rail_rule_version": "rail/1.0.0",
+    "as_of": "2026-10-15",
+    "data_versions": {
+      "cdci": "cdci_excerpt.csv@1b4208c107e2",
+      "nlem": "NOT_LOADED",
+      "jan_aushadhi": "NOT_LOADED",
+      "regulatory_gazette": "regulatory_gazette_events.csv@8bc3170939ed",
+      "severe_interactions": "severe_interaction_seed.csv@047d5ac1f9d8",
+      "pharmacy_stock": "NOT_LOADED",
+      "stw_corpus": "NOT_LOADED",
+      "local_protocol": "NOT_LOADED"
+    },
+    "items": [
+      {
+        "line_no": 1,
+        "written_product": "Dolo 650",
+        "dose_frequency": "1-0-1 x 5d",
+        "strength_as_written": "650 mg",
+        "units_per_day": 2,
+        "course_days": 5,
+        "resolution": "RESOLVED",
+        "product_id": 1,
+        "brand_name": "Dolo 650",
+        "ingredients": [
+          {
+            "name": "Paracetamol",
+            "strength_mg": 650.0
+          }
+        ],
+        "state": "PARTIAL_COVERAGE",
+        "detail": "Resolved to one CDCI product; checks ran against the loaded registers only"
+      },
+      {
+        "line_no": 2,
+        "written_product": "Sinarest Tablet",
+        "dose_frequency": "1-0-1 x 5d",
+        "strength_as_written": "",
+        "units_per_day": 2,
+        "course_days": 5,
+        "resolution": "RESOLVED",
+        "product_id": 14,
+        "brand_name": "Sinarest Tablet",
+        "ingredients": [
+          {
+            "name": "Paracetamol",
+            "strength_mg": 500.0
+          },
+          {
+            "name": "Chlorpheniramine",
+            "strength_mg": 2.0
+          },
+          {
+            "name": "Phenylephrine",
+            "strength_mg": 10.0
+          }
+        ],
+        "state": "PARTIAL_COVERAGE",
+        "detail": "Resolved to one CDCI product; checks ran against the loaded registers only"
+      }
+    ],
+    "checks": {
+      "duplicate_ingredient": [
+        {
+          "ingredient": "Paracetamol",
+          "state": "HIT",
+          "severity": "MODERATE",
+          "products": [
+            "Dolo 650",
+            "Sinarest Tablet"
+          ],
+          "lines": [
+            1,
+            2
+          ],
+          "aggregate": {
+            "daily_mg_known": 2300.0,
+            "lower_bound": false
+          },
+          "detail": "Paracetamol appears in 2 products on this prescription"
+        }
+      ],
+      "cumulative_exposure": [
+        {
+          "ingredient": "Chlorpheniramine",
+          "state": "NOT_CHECKED",
+          "daily_mg_known": 4.0,
+          "lower_bound": false,
+          "lines": [
+            2
+          ],
+          "contributions": [
+            {
+              "line_no": 2,
+              "brand": "Sinarest Tablet",
+              "mg_per_day": 4.0
+            }
+          ],
+          "unknown_contributions": [],
+          "max_daily_mg": null,
+          "max_daily_mg_source": null,
+          "detail": "No documented daily ceiling configured for Chlorpheniramine; aggregate shown as evidence only."
+        },
+        {
+          "ingredient": "Paracetamol",
+          "state": "CHECKED_NO_HIT",
+          "daily_mg_known": 2300.0,
+          "lower_bound": false,
+          "lines": [
+            1,
+            2
+          ],
+          "contributions": [
+            {
+              "line_no": 1,
+              "brand": "Dolo 650",
+              "mg_per_day": 1300.0
+            },
+            {
+              "line_no": 2,
+              "brand": "Sinarest Tablet",
+              "mg_per_day": 1000.0
+            }
+          ],
+          "unknown_contributions": [],
+          "max_daily_mg": 3000,
+          "max_daily_mg_source": "STW-GP-01 v2025.1: max 3 g/day adult",
+          "detail": "Total of Paracetamol is within the documented ceiling."
+        },
+        {
+          "ingredient": "Phenylephrine",
+          "state": "NOT_CHECKED",
+          "daily_mg_known": 20.0,
+          "lower_bound": false,
+          "lines": [
+            2
+          ],
+          "contributions": [
+            {
+              "line_no": 2,
+              "brand": "Sinarest Tablet",
+              "mg_per_day": 20.0
+            }
+          ],
+          "unknown_contributions": [],
+          "max_daily_mg": null,
+          "max_daily_mg_source": null,
+          "detail": "No documented daily ceiling configured for Phenylephrine; aggregate shown as evidence only."
+        }
+      ],
+      "prohibited_fdc": [
+        {
+          "state": "PARTIAL_COVERAGE",
+          "label": "ingredient paracetamol",
+          "lines": [
+            1
+          ],
+          "detail": "No gazette event in the register for ingredient paracetamol as of 2026-10-15. The register holds 12 events; absence here is not clearance."
+        },
+        {
+          "state": "PARTIAL_COVERAGE",
+          "label": "FDC chlorpheniramine + paracetamol + phenylephrine",
+          "lines": [
+            2
+          ],
+          "detail": "No gazette event in the register for FDC chlorpheniramine + paracetamol + phenylephrine as of 2026-10-15. The register holds 12 events; absence here is not clearance."
+        },
+        {
+          "state": "PARTIAL_COVERAGE",
+          "label": "ingredient chlorpheniramine",
+          "lines": [
+            2
+          ],
+          "detail": "No gazette event in the register for ingredient chlorpheniramine as of 2026-10-15. The register holds 12 events; absence here is not clearance."
+        },
+        {
+          "state": "PARTIAL_COVERAGE",
+          "label": "ingredient paracetamol",
+          "lines": [
+            2
+          ],
+          "detail": "No gazette event in the register for ingredient paracetamol as of 2026-10-15. The register holds 12 events; absence here is not clearance."
+        },
+        {
+          "state": "PARTIAL_COVERAGE",
+          "label": "ingredient phenylephrine",
+          "lines": [
+            2
+          ],
+          "detail": "No gazette event in the register for ingredient phenylephrine as of 2026-10-15. The register holds 12 events; absence here is not clearance."
+        }
+      ],
+      "severe_interaction": [
+        {
+          "state": "PARTIAL_COVERAGE",
+          "detail": "3 pairs checked against a seed list of 15 pairs. No hit is not evidence of no interaction."
+        }
+      ]
+    },
+    "overall_state": "HIT",
+    "states_present": [
+      "HIT",
+      "NOT_CHECKED",
+      "PARTIAL_COVERAGE",
+      "CHECKED_NO_HIT"
+    ],
+    "notes": []
+  },
+  "RX02": {
+    "rail_rule_version": "rail/1.0.0",
+    "as_of": "2026-10-15",
+    "data_versions": {
+      "cdci": "cdci_excerpt.csv@1b4208c107e2",
+      "nlem": "NOT_LOADED",
+      "jan_aushadhi": "NOT_LOADED",
+      "regulatory_gazette": "regulatory_gazette_events.csv@8bc3170939ed",
+      "severe_interactions": "severe_interaction_seed.csv@047d5ac1f9d8",
+      "pharmacy_stock": "NOT_LOADED",
+      "stw_corpus": "NOT_LOADED",
+      "local_protocol": "NOT_LOADED"
+    },
+    "items": [
+      {
+        "line_no": 1,
+        "written_product": "NimuPar-P",
+        "dose_frequency": "1-0-1 x 3d",
+        "strength_as_written": "",
+        "units_per_day": 2,
+        "course_days": 3,
+        "resolution": "RESOLVED",
+        "product_id": 18,
+        "brand_name": "NimuPar-P",
+        "ingredients": [
+          {
+            "name": "Nimesulide",
+            "strength_mg": 100.0
+          },
+          {
+            "name": "Paracetamol",
+            "strength_mg": 325.0
+          }
+        ],
+        "state": "PARTIAL_COVERAGE",
+        "detail": "Resolved to one CDCI product; checks ran against the loaded registers only"
+      }
+    ],
+    "checks": {
+      "duplicate_ingredient": [],
+      "cumulative_exposure": [
+        {
+          "ingredient": "Nimesulide",
+          "state": "NOT_CHECKED",
+          "daily_mg_known": 200.0,
+          "lower_bound": false,
+          "lines": [
+            1
+          ],
+          "contributions": [
+            {
+              "line_no": 1,
+              "brand": "NimuPar-P",
+              "mg_per_day": 200.0
+            }
+          ],
+          "unknown_contributions": [],
+          "max_daily_mg": null,
+          "max_daily_mg_source": null,
+          "detail": "No documented daily ceiling configured for Nimesulide; aggregate shown as evidence only."
+        },
+        {
+          "ingredient": "Paracetamol",
+          "state": "CHECKED_NO_HIT",
+          "daily_mg_known": 650.0,
+          "lower_bound": false,
+          "lines": [
+            1
+          ],
+          "contributions": [
+            {
+              "line_no": 1,
+              "brand": "NimuPar-P",
+              "mg_per_day": 650.0
+            }
+          ],
+          "unknown_contributions": [],
+          "max_daily_mg": 3000,
+          "max_daily_mg_source": "STW-GP-01 v2025.1: max 3 g/day adult",
+          "detail": "Total of Paracetamol is within the documented ceiling."
+        }
+      ],
+      "prohibited_fdc": [
+        {
+          "state": "HIT",
+          "label": "FDC nimesulide + paracetamol",
+          "lines": [
+            1
+          ],
+          "severity": "HIGH",
+          "evidence": {
+            "event_id": "EV003",
+            "notification_id": "GSR 411(E)",
+            "effective_date": "2023-06-15",
+            "action": "PROHIBITED",
+            "target_description": "Nimesulide + Paracetamol (all strengths)",
+            "supersedes": "EV002"
+          },
+          "detail": "PROHIBITED by GSR 411(E), effective 2023-06-15."
+        },
+        {
+          "state": "PARTIAL_COVERAGE",
+          "label": "ingredient nimesulide",
+          "lines": [
+            1
+          ],
+          "detail": "No gazette event in the register for ingredient nimesulide as of 2026-10-15. The register holds 12 events; absence here is not clearance."
+        },
+        {
+          "state": "PARTIAL_COVERAGE",
+          "label": "ingredient paracetamol",
+          "lines": [
+            1
+          ],
+          "detail": "No gazette event in the register for ingredient paracetamol as of 2026-10-15. The register holds 12 events; absence here is not clearance."
+        }
+      ],
+      "severe_interaction": [
+        {
+          "state": "PARTIAL_COVERAGE",
+          "detail": "1 pairs checked against a seed list of 15 pairs. No hit is not evidence of no interaction."
+        }
+      ]
+    },
+    "overall_state": "HIT",
+    "states_present": [
+      "HIT",
+      "NOT_CHECKED",
+      "PARTIAL_COVERAGE",
+      "CHECKED_NO_HIT"
+    ],
+    "notes": []
+  },
+  "RX03": {
+    "rail_rule_version": "rail/1.0.0",
+    "as_of": "2026-10-15",
+    "data_versions": {
+      "cdci": "cdci_excerpt.csv@1b4208c107e2",
+      "nlem": "NOT_LOADED",
+      "jan_aushadhi": "NOT_LOADED",
+      "regulatory_gazette": "regulatory_gazette_events.csv@8bc3170939ed",
+      "severe_interactions": "severe_interaction_seed.csv@047d5ac1f9d8",
+      "pharmacy_stock": "NOT_LOADED",
+      "stw_corpus": "NOT_LOADED",
+      "local_protocol": "NOT_LOADED"
+    },
+    "items": [
+      {
+        "line_no": 1,
+        "written_product": "Warf 5",
+        "dose_frequency": "0-0-1",
+        "strength_as_written": "5 mg",
+        "units_per_day": 1,
+        "course_days": null,
+        "resolution": "RESOLVED",
+        "product_id": 10,
+        "brand_name": "Warf 5",
+        "ingredients": [
+          {
+            "name": "Warfarin",
+            "strength_mg": 5.0
+          }
+        ],
+        "state": "PARTIAL_COVERAGE",
+        "detail": "Resolved to one CDCI product; checks ran against the loaded registers only"
+      },
+      {
+        "line_no": 2,
+        "written_product": "Azee 500",
+        "dose_frequency": "1-0-0 x 3d",
+        "strength_as_written": "500 mg",
+        "units_per_day": 1,
+        "course_days": 3,
+        "resolution": "RESOLVED",
+        "product_id": 4,
+        "brand_name": "Azee 500",
+        "ingredients": [
+          {
+            "name": "Azithromycin",
+            "strength_mg": 500.0
+          }
+        ],
+        "state": "PARTIAL_COVERAGE",
+        "detail": "Resolved to one CDCI product; checks ran against the loaded registers only"
+      }
+    ],
+    "checks": {
+      "duplicate_ingredient": [],
+      "cumulative_exposure": [
+        {
+          "ingredient": "Azithromycin",
+          "state": "NOT_CHECKED",
+          "daily_mg_known": 500.0,
+          "lower_bound": false,
+          "lines": [
+            2
+          ],
+          "contributions": [
+            {
+              "line_no": 2,
+              "brand": "Azee 500",
+              "mg_per_day": 500.0
+            }
+          ],
+          "unknown_contributions": [],
+          "max_daily_mg": null,
+          "max_daily_mg_source": null,
+          "detail": "No documented daily ceiling configured for Azithromycin; aggregate shown as evidence only."
+        },
+        {
+          "ingredient": "Warfarin",
+          "state": "NOT_CHECKED",
+          "daily_mg_known": 5.0,
+          "lower_bound": false,
+          "lines": [
+            1
+          ],
+          "contributions": [
+            {
+              "line_no": 1,
+              "brand": "Warf 5",
+              "mg_per_day": 5.0
+            }
+          ],
+          "unknown_contributions": [],
+          "max_daily_mg": null,
+          "max_daily_mg_source": null,
+          "detail": "No documented daily ceiling configured for Warfarin; aggregate shown as evidence only."
+        }
+      ],
+      "prohibited_fdc": [
+        {
+          "state": "PARTIAL_COVERAGE",
+          "label": "ingredient warfarin",
+          "lines": [
+            1
+          ],
+          "detail": "No gazette event in the register for ingredient warfarin as of 2026-10-15. The register holds 12 events; absence here is not clearance."
+        },
+        {
+          "state": "PARTIAL_COVERAGE",
+          "label": "ingredient azithromycin",
+          "lines": [
+            2
+          ],
+          "detail": "No gazette event in the register for ingredient azithromycin as of 2026-10-15. The register holds 12 events; absence here is not clearance."
+        }
+      ],
+      "severe_interaction": [
+        {
+          "state": "HIT",
+          "severity": "SEVERE",
+          "pair": [
+            "Azithromycin",
+            "Warfarin"
+          ],
+          "lines": [
+            1,
+            2
+          ],
+          "evidence": {
+            "note": "INR elevation; bleeding",
+            "source_tag": "public-high-priority-2026",
+            "seed_row_id": 2,
+            "load_batch": 3
+          }
+        }
+      ]
+    },
+    "overall_state": "HIT",
+    "states_present": [
+      "HIT",
+      "NOT_CHECKED",
+      "PARTIAL_COVERAGE"
+    ],
+    "notes": []
+  },
+  "RX04": {
+    "rail_rule_version": "rail/1.0.0",
+    "as_of": "2026-10-15",
+    "data_versions": {
+      "cdci": "cdci_excerpt.csv@1b4208c107e2",
+      "nlem": "NOT_LOADED",
+      "jan_aushadhi": "NOT_LOADED",
+      "regulatory_gazette": "regulatory_gazette_events.csv@8bc3170939ed",
+      "severe_interactions": "severe_interaction_seed.csv@047d5ac1f9d8",
+      "pharmacy_stock": "NOT_LOADED",
+      "stw_corpus": "NOT_LOADED",
+      "local_protocol": "NOT_LOADED"
+    },
+    "items": [
+      {
+        "line_no": 1,
+        "written_product": "Telma",
+        "dose_frequency": "1-0-0",
+        "strength_as_written": "",
+        "units_per_day": 1,
+        "course_days": null,
+        "resolution": "UNMATCHED",
+        "product_id": null,
+        "brand_name": null,
+        "ingredients": [],
+        "state": "NOT_CHECKED",
+        "detail": "No CDCI brand match; item not checked"
+      }
+    ],
+    "checks": {
+      "duplicate_ingredient": [],
+      "cumulative_exposure": [],
+      "prohibited_fdc": [],
+      "severe_interaction": [
+        {
+          "state": "NOT_CHECKED",
+          "detail": "Fewer than two resolved ingredients; no pair to check."
+        }
+      ]
+    },
+    "overall_state": "NOT_CHECKED",
+    "states_present": [
+      "NOT_CHECKED"
+    ],
+    "notes": [
+      "Unresolved lines [1]: these were not checked and must not be read as clear."
+    ]
+  },
+  "RX05": {
+    "rail_rule_version": "rail/1.0.0",
+    "as_of": "2026-10-15",
+    "data_versions": {
+      "cdci": "cdci_excerpt.csv@1b4208c107e2",
+      "nlem": "NOT_LOADED",
+      "jan_aushadhi": "NOT_LOADED",
+      "regulatory_gazette": "regulatory_gazette_events.csv@8bc3170939ed",
+      "severe_interactions": "severe_interaction_seed.csv@047d5ac1f9d8",
+      "pharmacy_stock": "NOT_LOADED",
+      "stw_corpus": "NOT_LOADED",
+      "local_protocol": "NOT_LOADED"
+    },
+    "items": [
+      {
+        "line_no": 1,
+        "written_product": "Glycomet 500",
+        "dose_frequency": "1-0-1",
+        "strength_as_written": "500 mg",
+        "units_per_day": 2,
+        "course_days": null,
+        "resolution": "RESOLVED",
+        "product_id": 8,
+        "brand_name": "Glycomet 500",
+        "ingredients": [
+          {
+            "name": "Metformin",
+            "strength_mg": 500.0
+          }
+        ],
+        "state": "PARTIAL_COVERAGE",
+        "detail": "Resolved to one CDCI product; checks ran against the loaded registers only"
+      },
+      {
+        "line_no": 2,
+        "written_product": "Atorva 10",
+        "dose_frequency": "0-0-1",
+        "strength_as_written": "10 mg",
+        "units_per_day": 1,
+        "course_days": null,
+        "resolution": "RESOLVED",
+        "product_id": 11,
+        "brand_name": "Atorva 10",
+        "ingredients": [
+          {
+            "name": "Atorvastatin",
+            "strength_mg": 10.0
+          }
+        ],
+        "state": "PARTIAL_COVERAGE",
+        "detail": "Resolved to one CDCI product; checks ran against the loaded registers only"
+      }
+    ],
+    "checks": {
+      "duplicate_ingredient": [],
+      "cumulative_exposure": [
+        {
+          "ingredient": "Atorvastatin",
+          "state": "NOT_CHECKED",
+          "daily_mg_known": 10.0,
+          "lower_bound": false,
+          "lines": [
+            2
+          ],
+          "contributions": [
+            {
+              "line_no": 2,
+              "brand": "Atorva 10",
+              "mg_per_day": 10.0
+            }
+          ],
+          "unknown_contributions": [],
+          "max_daily_mg": null,
+          "max_daily_mg_source": null,
+          "detail": "No documented daily ceiling configured for Atorvastatin; aggregate shown as evidence only."
+        },
+        {
+          "ingredient": "Metformin",
+          "state": "NOT_CHECKED",
+          "daily_mg_known": 1000.0,
+          "lower_bound": false,
+          "lines": [
+            1
+          ],
+          "contributions": [
+            {
+              "line_no": 1,
+              "brand": "Glycomet 500",
+              "mg_per_day": 1000.0
+            }
+          ],
+          "unknown_contributions": [],
+          "max_daily_mg": null,
+          "max_daily_mg_source": null,
+          "detail": "No documented daily ceiling configured for Metformin; aggregate shown as evidence only."
+        }
+      ],
+      "prohibited_fdc": [
+        {
+          "state": "PARTIAL_COVERAGE",
+          "label": "ingredient metformin",
+          "lines": [
+            1
+          ],
+          "detail": "No gazette event in the register for ingredient metformin as of 2026-10-15. The register holds 12 events; absence here is not clearance."
+        },
+        {
+          "state": "PARTIAL_COVERAGE",
+          "label": "ingredient atorvastatin",
+          "lines": [
+            2
+          ],
+          "detail": "No gazette event in the register for ingredient atorvastatin as of 2026-10-15. The register holds 12 events; absence here is not clearance."
+        }
+      ],
+      "severe_interaction": [
+        {
+          "state": "PARTIAL_COVERAGE",
+          "detail": "1 pairs checked against a seed list of 15 pairs. No hit is not evidence of no interaction."
+        }
+      ]
+    },
+    "overall_state": "NOT_CHECKED",
+    "states_present": [
+      "NOT_CHECKED",
+      "PARTIAL_COVERAGE"
+    ],
+    "notes": []
+  },
+  "RX06": {
+    "rail_rule_version": "rail/1.0.0",
+    "as_of": "2026-10-15",
+    "data_versions": {
+      "cdci": "cdci_excerpt.csv@1b4208c107e2",
+      "nlem": "NOT_LOADED",
+      "jan_aushadhi": "NOT_LOADED",
+      "regulatory_gazette": "regulatory_gazette_events.csv@8bc3170939ed",
+      "severe_interactions": "severe_interaction_seed.csv@047d5ac1f9d8",
+      "pharmacy_stock": "NOT_LOADED",
+      "stw_corpus": "NOT_LOADED",
+      "local_protocol": "NOT_LOADED"
+    },
+    "items": [
+      {
+        "line_no": 1,
+        "written_product": "Augmentin 625 Duo",
+        "dose_frequency": "1-0-1 x 5d",
+        "strength_as_written": "",
+        "units_per_day": 2,
+        "course_days": 5,
+        "resolution": "RESOLVED",
+        "product_id": 15,
+        "brand_name": "Augmentin 625 Duo",
+        "ingredients": [
+          {
+            "name": "Amoxicillin",
+            "strength_mg": 500.0
+          },
+          {
+            "name": "Clavulanic Acid",
+            "strength_mg": 125.0
+          }
+        ],
+        "state": "PARTIAL_COVERAGE",
+        "detail": "Resolved to one CDCI product; checks ran against the loaded registers only"
+      },
+      {
+        "line_no": 2,
+        "written_product": "Okacet 10",
+        "dose_frequency": "0-0-1 x 5d",
+        "strength_as_written": "10 mg",
+        "units_per_day": 1,
+        "course_days": 5,
+        "resolution": "RESOLVED",
+        "product_id": 12,
+        "brand_name": "Okacet 10",
+        "ingredients": [
+          {
+            "name": "Cetirizine",
+            "strength_mg": 10.0
+          }
+        ],
+        "state": "PARTIAL_COVERAGE",
+        "detail": "Resolved to one CDCI product; checks ran against the loaded registers only"
+      }
+    ],
+    "checks": {
+      "duplicate_ingredient": [],
+      "cumulative_exposure": [
+        {
+          "ingredient": "Amoxicillin",
+          "state": "NOT_CHECKED",
+          "daily_mg_known": 1000.0,
+          "lower_bound": false,
+          "lines": [
+            1
+          ],
+          "contributions": [
+            {
+              "line_no": 1,
+              "brand": "Augmentin 625 Duo",
+              "mg_per_day": 1000.0
+            }
+          ],
+          "unknown_contributions": [],
+          "max_daily_mg": null,
+          "max_daily_mg_source": null,
+          "detail": "No documented daily ceiling configured for Amoxicillin; aggregate shown as evidence only."
+        },
+        {
+          "ingredient": "Cetirizine",
+          "state": "NOT_CHECKED",
+          "daily_mg_known": 10.0,
+          "lower_bound": false,
+          "lines": [
+            2
+          ],
+          "contributions": [
+            {
+              "line_no": 2,
+              "brand": "Okacet 10",
+              "mg_per_day": 10.0
+            }
+          ],
+          "unknown_contributions": [],
+          "max_daily_mg": null,
+          "max_daily_mg_source": null,
+          "detail": "No documented daily ceiling configured for Cetirizine; aggregate shown as evidence only."
+        },
+        {
+          "ingredient": "Clavulanic Acid",
+          "state": "NOT_CHECKED",
+          "daily_mg_known": 250.0,
+          "lower_bound": false,
+          "lines": [
+            1
+          ],
+          "contributions": [
+            {
+              "line_no": 1,
+              "brand": "Augmentin 625 Duo",
+              "mg_per_day": 250.0
+            }
+          ],
+          "unknown_contributions": [],
+          "max_daily_mg": null,
+          "max_daily_mg_source": null,
+          "detail": "No documented daily ceiling configured for Clavulanic Acid; aggregate shown as evidence only."
+        }
+      ],
+      "prohibited_fdc": [
+        {
+          "state": "PARTIAL_COVERAGE",
+          "label": "FDC amoxicillin + clavulanic acid",
+          "lines": [
+            1
+          ],
+          "detail": "No gazette event in the register for FDC amoxicillin + clavulanic acid as of 2026-10-15. The register holds 12 events; absence here is not clearance."
+        },
+        {
+          "state": "PARTIAL_COVERAGE",
+          "label": "ingredient amoxicillin",
+          "lines": [
+            1
+          ],
+          "detail": "No gazette event in the register for ingredient amoxicillin as of 2026-10-15. The register holds 12 events; absence here is not clearance."
+        },
+        {
+          "state": "PARTIAL_COVERAGE",
+          "label": "ingredient clavulanic acid",
+          "lines": [
+            1
+          ],
+          "detail": "No gazette event in the register for ingredient clavulanic acid as of 2026-10-15. The register holds 12 events; absence here is not clearance."
+        },
+        {
+          "state": "PARTIAL_COVERAGE",
+          "label": "ingredient cetirizine",
+          "lines": [
+            2
+          ],
+          "detail": "No gazette event in the register for ingredient cetirizine as of 2026-10-15. The register holds 12 events; absence here is not clearance."
+        }
+      ],
+      "severe_interaction": [
+        {
+          "state": "PARTIAL_COVERAGE",
+          "detail": "3 pairs checked against a seed list of 15 pairs. No hit is not evidence of no interaction."
+        }
+      ]
+    },
+    "overall_state": "NOT_CHECKED",
+    "states_present": [
+      "NOT_CHECKED",
+      "PARTIAL_COVERAGE"
+    ],
+    "notes": []
+  },
+  "RX07": {
+    "rail_rule_version": "rail/1.0.0",
+    "as_of": "2026-10-15",
+    "data_versions": {
+      "cdci": "cdci_excerpt.csv@1b4208c107e2",
+      "nlem": "NOT_LOADED",
+      "jan_aushadhi": "NOT_LOADED",
+      "regulatory_gazette": "regulatory_gazette_events.csv@8bc3170939ed",
+      "severe_interactions": "severe_interaction_seed.csv@047d5ac1f9d8",
+      "pharmacy_stock": "NOT_LOADED",
+      "stw_corpus": "NOT_LOADED",
+      "local_protocol": "NOT_LOADED"
+    },
+    "items": [
+      {
+        "line_no": 1,
+        "written_product": "Calpol 650",
+        "dose_frequency": "1-1-1 x 3d",
+        "strength_as_written": "650 mg",
+        "units_per_day": 3,
+        "course_days": 3,
+        "resolution": "RESOLVED",
+        "product_id": 2,
+        "brand_name": "Calpol 650",
+        "ingredients": [
+          {
+            "name": "Paracetamol",
+            "strength_mg": 650.0
+          }
+        ],
+        "state": "PARTIAL_COVERAGE",
+        "detail": "Resolved to one CDCI product; checks ran against the loaded registers only"
+      },
+      {
+        "line_no": 2,
+        "written_product": "Crocin 650",
+        "dose_frequency": "SOS",
+        "strength_as_written": "650 mg",
+        "units_per_day": null,
+        "course_days": null,
+        "resolution": "RESOLVED",
+        "product_id": 3,
+        "brand_name": "Crocin 650",
+        "ingredients": [
+          {
+            "name": "Paracetamol",
+            "strength_mg": 650.0
+          }
+        ],
+        "state": "PARTIAL_COVERAGE",
+        "detail": "Resolved to one CDCI product; checks ran against the loaded registers only"
+      }
+    ],
+    "checks": {
+      "duplicate_ingredient": [
+        {
+          "ingredient": "Paracetamol",
+          "state": "HIT",
+          "severity": "MODERATE",
+          "products": [
+            "Calpol 650",
+            "Crocin 650"
+          ],
+          "lines": [
+            1,
+            2
+          ],
+          "aggregate": {
+            "daily_mg_known": 1950.0,
+            "lower_bound": true
+          },
+          "detail": "Paracetamol appears in 2 products on this prescription"
+        }
+      ],
+      "cumulative_exposure": [
+        {
+          "ingredient": "Paracetamol",
+          "state": "PARTIAL_COVERAGE",
+          "daily_mg_known": 1950.0,
+          "lower_bound": true,
+          "lines": [
+            1,
+            2
+          ],
+          "contributions": [
+            {
+              "line_no": 1,
+              "brand": "Calpol 650",
+              "mg_per_day": 1950.0
+            }
+          ],
+          "unknown_contributions": [
+            {
+              "line_no": 2,
+              "reason": "FREQUENCY_UNPARSED",
+              "dose_frequency": "SOS"
+            }
+          ],
+          "max_daily_mg": 3000,
+          "max_daily_mg_source": "STW-GP-01 v2025.1: max 3 g/day adult",
+          "detail": "Known daily total of Paracetamol is a lower bound; some items have no usable strength or frequency."
+        }
+      ],
+      "prohibited_fdc": [
+        {
+          "state": "PARTIAL_COVERAGE",
+          "label": "ingredient paracetamol",
+          "lines": [
+            1
+          ],
+          "detail": "No gazette event in the register for ingredient paracetamol as of 2026-10-15. The register holds 12 events; absence here is not clearance."
+        },
+        {
+          "state": "PARTIAL_COVERAGE",
+          "label": "ingredient paracetamol",
+          "lines": [
+            2
+          ],
+          "detail": "No gazette event in the register for ingredient paracetamol as of 2026-10-15. The register holds 12 events; absence here is not clearance."
+        }
+      ],
+      "severe_interaction": [
+        {
+          "state": "NOT_CHECKED",
+          "detail": "Fewer than two resolved ingredients; no pair to check."
+        }
+      ]
+    },
+    "overall_state": "HIT",
+    "states_present": [
+      "HIT",
+      "NOT_CHECKED",
+      "PARTIAL_COVERAGE"
+    ],
+    "notes": []
+  },
+  "RX08": {
+    "rail_rule_version": "rail/1.0.0",
+    "as_of": "2026-10-15",
+    "data_versions": {
+      "cdci": "cdci_excerpt.csv@1b4208c107e2",
+      "nlem": "NOT_LOADED",
+      "jan_aushadhi": "NOT_LOADED",
+      "regulatory_gazette": "regulatory_gazette_events.csv@8bc3170939ed",
+      "severe_interactions": "severe_interaction_seed.csv@047d5ac1f9d8",
+      "pharmacy_stock": "NOT_LOADED",
+      "stw_corpus": "NOT_LOADED",
+      "local_protocol": "NOT_LOADED"
+    },
+    "items": [
+      {
+        "line_no": 1,
+        "written_product": "Zqtrixon Forte",
+        "dose_frequency": "1-0-1",
+        "strength_as_written": "",
+        "units_per_day": 2,
+        "course_days": null,
+        "resolution": "UNMATCHED",
+        "product_id": null,
+        "brand_name": null,
+        "ingredients": [],
+        "state": "NOT_CHECKED",
+        "detail": "No CDCI brand match; item not checked"
+      }
+    ],
+    "checks": {
+      "duplicate_ingredient": [],
+      "cumulative_exposure": [],
+      "prohibited_fdc": [],
+      "severe_interaction": [
+        {
+          "state": "NOT_CHECKED",
+          "detail": "Fewer than two resolved ingredients; no pair to check."
+        }
+      ]
+    },
+    "overall_state": "NOT_CHECKED",
+    "states_present": [
+      "NOT_CHECKED"
+    ],
+    "notes": [
+      "Unresolved lines [1]: these were not checked and must not be read as clear."
+    ]
+  },
+  "RX09": {
+    "rail_rule_version": "rail/1.0.0",
+    "as_of": "2026-10-15",
+    "data_versions": {
+      "cdci": "cdci_excerpt.csv@1b4208c107e2",
+      "nlem": "NOT_LOADED",
+      "jan_aushadhi": "NOT_LOADED",
+      "regulatory_gazette": "regulatory_gazette_events.csv@8bc3170939ed",
+      "severe_interactions": "severe_interaction_seed.csv@047d5ac1f9d8",
+      "pharmacy_stock": "NOT_LOADED",
+      "stw_corpus": "NOT_LOADED",
+      "local_protocol": "NOT_LOADED"
+    },
+    "items": [
+      {
+        "line_no": 1,
+        "written_product": "Telma-H 40",
+        "dose_frequency": "1-0-0",
+        "strength_as_written": "",
+        "units_per_day": 1,
+        "course_days": null,
+        "resolution": "RESOLVED",
+        "product_id": 16,
+        "brand_name": "Telma-H 40",
+        "ingredients": [
+          {
+            "name": "Telmisartan",
+            "strength_mg": 40.0
+          },
+          {
+            "name": "Hydrochlorothiazide",
+            "strength_mg": 12.5
+          }
+        ],
+        "state": "PARTIAL_COVERAGE",
+        "detail": "Resolved to one CDCI product; checks ran against the loaded registers only"
+      },
+      {
+        "line_no": 2,
+        "written_product": "Telma 40",
+        "dose_frequency": "0-0-1",
+        "strength_as_written": "40 mg",
+        "units_per_day": 1,
+        "course_days": null,
+        "resolution": "RESOLVED",
+        "product_id": 6,
+        "brand_name": "Telma 40",
+        "ingredients": [
+          {
+            "name": "Telmisartan",
+            "strength_mg": 40.0
+          }
+        ],
+        "state": "PARTIAL_COVERAGE",
+        "detail": "Resolved to one CDCI product; checks ran against the loaded registers only"
+      }
+    ],
+    "checks": {
+      "duplicate_ingredient": [
+        {
+          "ingredient": "Telmisartan",
+          "state": "HIT",
+          "severity": "MODERATE",
+          "products": [
+            "Telma 40",
+            "Telma-H 40"
+          ],
+          "lines": [
+            1,
+            2
+          ],
+          "aggregate": {
+            "daily_mg_known": 80.0,
+            "lower_bound": false
+          },
+          "detail": "Telmisartan appears in 2 products on this prescription"
+        }
+      ],
+      "cumulative_exposure": [
+        {
+          "ingredient": "Hydrochlorothiazide",
+          "state": "NOT_CHECKED",
+          "daily_mg_known": 12.5,
+          "lower_bound": false,
+          "lines": [
+            1
+          ],
+          "contributions": [
+            {
+              "line_no": 1,
+              "brand": "Telma-H 40",
+              "mg_per_day": 12.5
+            }
+          ],
+          "unknown_contributions": [],
+          "max_daily_mg": null,
+          "max_daily_mg_source": null,
+          "detail": "No documented daily ceiling configured for Hydrochlorothiazide; aggregate shown as evidence only."
+        },
+        {
+          "ingredient": "Telmisartan",
+          "state": "NOT_CHECKED",
+          "daily_mg_known": 80.0,
+          "lower_bound": false,
+          "lines": [
+            1,
+            2
+          ],
+          "contributions": [
+            {
+              "line_no": 1,
+              "brand": "Telma-H 40",
+              "mg_per_day": 40.0
+            },
+            {
+              "line_no": 2,
+              "brand": "Telma 40",
+              "mg_per_day": 40.0
+            }
+          ],
+          "unknown_contributions": [],
+          "max_daily_mg": null,
+          "max_daily_mg_source": null,
+          "detail": "No documented daily ceiling configured for Telmisartan; aggregate shown as evidence only."
+        }
+      ],
+      "prohibited_fdc": [
+        {
+          "state": "PARTIAL_COVERAGE",
+          "label": "FDC hydrochlorothiazide + telmisartan",
+          "lines": [
+            1
+          ],
+          "detail": "No gazette event in the register for FDC hydrochlorothiazide + telmisartan as of 2026-10-15. The register holds 12 events; absence here is not clearance."
+        },
+        {
+          "state": "PARTIAL_COVERAGE",
+          "label": "ingredient hydrochlorothiazide",
+          "lines": [
+            1
+          ],
+          "detail": "No gazette event in the register for ingredient hydrochlorothiazide as of 2026-10-15. The register holds 12 events; absence here is not clearance."
+        },
+        {
+          "state": "PARTIAL_COVERAGE",
+          "label": "ingredient telmisartan",
+          "lines": [
+            1
+          ],
+          "detail": "No gazette event in the register for ingredient telmisartan as of 2026-10-15. The register holds 12 events; absence here is not clearance."
+        },
+        {
+          "state": "PARTIAL_COVERAGE",
+          "label": "ingredient telmisartan",
+          "lines": [
+            2
+          ],
+          "detail": "No gazette event in the register for ingredient telmisartan as of 2026-10-15. The register holds 12 events; absence here is not clearance."
+        }
+      ],
+      "severe_interaction": [
+        {
+          "state": "PARTIAL_COVERAGE",
+          "detail": "1 pairs checked against a seed list of 15 pairs. No hit is not evidence of no interaction."
+        }
+      ]
+    },
+    "overall_state": "HIT",
+    "states_present": [
+      "HIT",
+      "NOT_CHECKED",
+      "PARTIAL_COVERAGE"
+    ],
+    "notes": []
+  },
+  "RX10": {
+    "rail_rule_version": "rail/1.0.0",
+    "as_of": "2026-10-15",
+    "data_versions": {
+      "cdci": "cdci_excerpt.csv@1b4208c107e2",
+      "nlem": "NOT_LOADED",
+      "jan_aushadhi": "NOT_LOADED",
+      "regulatory_gazette": "regulatory_gazette_events.csv@8bc3170939ed",
+      "severe_interactions": "severe_interaction_seed.csv@047d5ac1f9d8",
+      "pharmacy_stock": "NOT_LOADED",
+      "stw_corpus": "NOT_LOADED",
+      "local_protocol": "NOT_LOADED"
+    },
+    "items": [
+      {
+        "line_no": 1,
+        "written_product": "Pan 40",
+        "dose_frequency": "1-0-0 x 14d",
+        "strength_as_written": "40 mg",
+        "units_per_day": 1,
+        "course_days": 14,
+        "resolution": "RESOLVED",
+        "product_id": 9,
+        "brand_name": "Pan 40",
+        "ingredients": [
+          {
+            "name": "Pantoprazole",
+            "strength_mg": 40.0
+          }
+        ],
+        "state": "PARTIAL_COVERAGE",
+        "detail": "Resolved to one CDCI product; checks ran against the loaded registers only"
+      },
+      {
+        "line_no": 2,
+        "written_product": "Thyronorm 50",
+        "dose_frequency": "1-0-0",
+        "strength_as_written": "50 mcg",
+        "units_per_day": 1,
+        "course_days": null,
+        "resolution": "RESOLVED",
+        "product_id": 13,
+        "brand_name": "Thyronorm 50",
+        "ingredients": [
+          {
+            "name": "Thyroxine",
+            "strength_mg": 50.0
+          }
+        ],
+        "state": "SOURCE_CONFLICT",
+        "detail": "Written unit 'mcg' differs from source unit 'mg' ('Thyroxine 50 mg'); not converted"
+      }
+    ],
+    "checks": {
+      "duplicate_ingredient": [],
+      "cumulative_exposure": [
+        {
+          "ingredient": "Pantoprazole",
+          "state": "NOT_CHECKED",
+          "daily_mg_known": 40.0,
+          "lower_bound": false,
+          "lines": [
+            1
+          ],
+          "contributions": [
+            {
+              "line_no": 1,
+              "brand": "Pan 40",
+              "mg_per_day": 40.0
+            }
+          ],
+          "unknown_contributions": [],
+          "max_daily_mg": null,
+          "max_daily_mg_source": null,
+          "detail": "No documented daily ceiling configured for Pantoprazole; aggregate shown as evidence only."
+        },
+        {
+          "ingredient": "Thyroxine",
+          "state": "NOT_CHECKED",
+          "daily_mg_known": 50.0,
+          "lower_bound": false,
+          "lines": [
+            2
+          ],
+          "contributions": [
+            {
+              "line_no": 2,
+              "brand": "Thyronorm 50",
+              "mg_per_day": 50.0
+            }
+          ],
+          "unknown_contributions": [],
+          "max_daily_mg": null,
+          "max_daily_mg_source": null,
+          "detail": "No documented daily ceiling configured for Thyroxine; aggregate shown as evidence only."
+        }
+      ],
+      "prohibited_fdc": [
+        {
+          "state": "PARTIAL_COVERAGE",
+          "label": "ingredient pantoprazole",
+          "lines": [
+            1
+          ],
+          "detail": "No gazette event in the register for ingredient pantoprazole as of 2026-10-15. The register holds 12 events; absence here is not clearance."
+        },
+        {
+          "state": "PARTIAL_COVERAGE",
+          "label": "ingredient thyroxine",
+          "lines": [
+            2
+          ],
+          "detail": "No gazette event in the register for ingredient thyroxine as of 2026-10-15. The register holds 12 events; absence here is not clearance."
+        }
+      ],
+      "severe_interaction": [
+        {
+          "state": "PARTIAL_COVERAGE",
+          "detail": "1 pairs checked against a seed list of 15 pairs. No hit is not evidence of no interaction."
+        }
+      ]
+    },
+    "overall_state": "SOURCE_CONFLICT",
+    "states_present": [
+      "SOURCE_CONFLICT",
+      "NOT_CHECKED",
+      "PARTIAL_COVERAGE"
+    ],
+    "notes": []
+  }
+}

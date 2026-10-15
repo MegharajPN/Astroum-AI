@@ -1,0 +1,280 @@
+{
+  "trace_id": "b18e88ff3fcc4053825b6a84aecbdeda",
+  "created_at": "2026-10-15T08:46:43.818128+00:00",
+  "unresolved_inputs": [],
+  "normalization": [
+    {
+      "line_no": 1,
+      "written_product": "Dolo 650",
+      "resolution": "RESOLVED",
+      "brand_name": "Dolo 650",
+      "product_id": 1,
+      "candidates": [],
+      "detail": "Resolved to one CDCI product; checks ran against the loaded registers only"
+    },
+    {
+      "line_no": 2,
+      "written_product": "Sinarest Tablet",
+      "resolution": "RESOLVED",
+      "brand_name": "Sinarest Tablet",
+      "product_id": 14,
+      "candidates": [],
+      "detail": "Resolved to one CDCI product; checks ran against the loaded registers only"
+    }
+  ],
+  "safety": {
+    "rail_rule_version": "rail/1.0.0",
+    "as_of": "2026-10-15",
+    "data_versions": {
+      "cdci": "cdci_excerpt.csv@1b4208c107e2",
+      "nlem": "NOT_LOADED",
+      "jan_aushadhi": "NOT_LOADED",
+      "regulatory_gazette": "regulatory_gazette_events.csv@8bc3170939ed",
+      "severe_interactions": "severe_interaction_seed.csv@047d5ac1f9d8",
+      "pharmacy_stock": "NOT_LOADED",
+      "stw_corpus": "NOT_LOADED",
+      "local_protocol": "NOT_LOADED"
+    },
+    "items": [
+      {
+        "line_no": 1,
+        "written_product": "Dolo 650",
+        "dose_frequency": "1-0-1 x 5d",
+        "strength_as_written": "650 mg",
+        "units_per_day": 2,
+        "course_days": 5,
+        "resolution": "RESOLVED",
+        "product_id": 1,
+        "brand_name": "Dolo 650",
+        "ingredients": [
+          {
+            "name": "Paracetamol",
+            "strength_mg": 650.0
+          }
+        ],
+        "state": "PARTIAL_COVERAGE",
+        "detail": "Resolved to one CDCI product; checks ran against the loaded registers only"
+      },
+      {
+        "line_no": 2,
+        "written_product": "Sinarest Tablet",
+        "dose_frequency": "1-0-1 x 5d",
+        "strength_as_written": "",
+        "units_per_day": 2,
+        "course_days": 5,
+        "resolution": "RESOLVED",
+        "product_id": 14,
+        "brand_name": "Sinarest Tablet",
+        "ingredients": [
+          {
+            "name": "Paracetamol",
+            "strength_mg": 500.0
+          },
+          {
+            "name": "Chlorpheniramine",
+            "strength_mg": 2.0
+          },
+          {
+            "name": "Phenylephrine",
+            "strength_mg": 10.0
+          }
+        ],
+        "state": "PARTIAL_COVERAGE",
+        "detail": "Resolved to one CDCI product; checks ran against the loaded registers only"
+      }
+    ],
+    "checks": {
+      "duplicate_ingredient": [
+        {
+          "ingredient": "Paracetamol",
+          "state": "HIT",
+          "severity": "MODERATE",
+          "products": [
+            "Dolo 650",
+            "Sinarest Tablet"
+          ],
+          "lines": [
+            1,
+            2
+          ],
+          "aggregate": {
+            "daily_mg_known": 2300.0,
+            "lower_bound": false
+          },
+          "detail": "Paracetamol appears in 2 products on this prescription"
+        }
+      ],
+      "cumulative_exposure": [
+        {
+          "ingredient": "Chlorpheniramine",
+          "state": "NOT_CHECKED",
+          "daily_mg_known": 4.0,
+          "lower_bound": false,
+          "lines": [
+            2
+          ],
+          "contributions": [
+            {
+              "line_no": 2,
+              "brand": "Sinarest Tablet",
+              "mg_per_day": 4.0
+            }
+          ],
+          "unknown_contributions": [],
+          "max_daily_mg": null,
+          "max_daily_mg_source": null,
+          "detail": "No documented daily ceiling configured for Chlorpheniramine; aggregate shown as evidence only."
+        },
+        {
+          "ingredient": "Paracetamol",
+          "state": "CHECKED_NO_HIT",
+          "daily_mg_known": 2300.0,
+          "lower_bound": false,
+          "lines": [
+            1,
+            2
+          ],
+          "contributions": [
+            {
+              "line_no": 1,
+              "brand": "Dolo 650",
+              "mg_per_day": 1300.0
+            },
+            {
+              "line_no": 2,
+              "brand": "Sinarest Tablet",
+              "mg_per_day": 1000.0
+            }
+          ],
+          "unknown_contributions": [],
+          "max_daily_mg": 3000,
+          "max_daily_mg_source": "STW-GP-01 v2025.1: max 3 g/day adult",
+          "detail": "Total of Paracetamol is within the documented ceiling."
+        },
+        {
+          "ingredient": "Phenylephrine",
+          "state": "NOT_CHECKED",
+          "daily_mg_known": 20.0,
+          "lower_bound": false,
+          "lines": [
+            2
+          ],
+          "contributions": [
+            {
+              "line_no": 2,
+              "brand": "Sinarest Tablet",
+              "mg_per_day": 20.0
+            }
+          ],
+          "unknown_contributions": [],
+          "max_daily_mg": null,
+          "max_daily_mg_source": null,
+          "detail": "No documented daily ceiling configured for Phenylephrine; aggregate shown as evidence only."
+        }
+      ],
+      "prohibited_fdc": [
+        {
+          "state": "PARTIAL_COVERAGE",
+          "label": "ingredient paracetamol",
+          "lines": [
+            1
+          ],
+          "detail": "No gazette event in the register for ingredient paracetamol as of 2026-10-15. The register holds 12 events; absence here is not clearance."
+        },
+        {
+          "state": "PARTIAL_COVERAGE",
+          "label": "FDC chlorpheniramine + paracetamol + phenylephrine",
+          "lines": [
+            2
+          ],
+          "detail": "No gazette event in the register for FDC chlorpheniramine + paracetamol + phenylephrine as of 2026-10-15. The register holds 12 events; absence here is not clearance."
+        },
+        {
+          "state": "PARTIAL_COVERAGE",
+          "label": "ingredient chlorpheniramine",
+          "lines": [
+            2
+          ],
+          "detail": "No gazette event in the register for ingredient chlorpheniramine as of 2026-10-15. The register holds 12 events; absence here is not clearance."
+        },
+        {
+          "state": "PARTIAL_COVERAGE",
+          "label": "ingredient paracetamol",
+          "lines": [
+            2
+          ],
+          "detail": "No gazette event in the register for ingredient paracetamol as of 2026-10-15. The register holds 12 events; absence here is not clearance."
+        },
+        {
+          "state": "PARTIAL_COVERAGE",
+          "label": "ingredient phenylephrine",
+          "lines": [
+            2
+          ],
+          "detail": "No gazette event in the register for ingredient phenylephrine as of 2026-10-15. The register holds 12 events; absence here is not clearance."
+        }
+      ],
+      "severe_interaction": [
+        {
+          "state": "PARTIAL_COVERAGE",
+          "detail": "3 pairs checked against a seed list of 15 pairs. No hit is not evidence of no interaction."
+        }
+      ]
+    },
+    "overall_state": "HIT",
+    "states_present": [
+      "HIT",
+      "NOT_CHECKED",
+      "PARTIAL_COVERAGE",
+      "CHECKED_NO_HIT"
+    ],
+    "notes": []
+  },
+  "grounded_answer": {
+    "question": "Which analgesic class must be avoided in suspected dengue, and why?",
+    "qa_rule_version": "qa-lexical/1.0.0",
+    "sources_searched": [
+      "NATIONAL_STW",
+      "LOCAL_PROTOCOL"
+    ],
+    "terms": [
+      "analgesic",
+      "clas",
+      "avoid",
+      "suspect",
+      "dengue"
+    ],
+    "number_policy": "Every number shown is quoted verbatim from a cited unit. None is computed.",
+    "model_calls": 0,
+    "status": "ABSTAINED",
+    "citations": [],
+    "conflicts": [],
+    "coverage": {
+      "NATIONAL_STW": false,
+      "LOCAL_PROTOCOL": false
+    },
+    "abstain_reason": "No decision unit in the searched sources shares at least 2 terms with the question. Terms with no match anywhere in those sources: ['analgesic', 'clas', 'avoid', 'suspect', 'dengue']. The corpus does not cover this question.",
+    "missing": [
+      "analgesic",
+      "clas",
+      "avoid",
+      "suspect",
+      "dengue"
+    ]
+  },
+  "versions": {
+    "rail_rule": "rail/1.0.0",
+    "qa_rule": "qa-lexical/1.0.0",
+    "data": {
+      "cdci": "cdci_excerpt.csv@1b4208c107e2",
+      "nlem": "NOT_LOADED",
+      "jan_aushadhi": "NOT_LOADED",
+      "regulatory_gazette": "regulatory_gazette_events.csv@8bc3170939ed",
+      "severe_interactions": "severe_interaction_seed.csv@047d5ac1f9d8",
+      "pharmacy_stock": "NOT_LOADED",
+      "stw_corpus": "NOT_LOADED",
+      "local_protocol": "NOT_LOADED"
+    },
+    "model": null
+  }
+}

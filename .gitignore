@@ -1,0 +1,19 @@
+# Python
+backend/.venv/
+__pycache__/
+*.pyc
+backend/.env
+
+# Node
+frontend/node_modules/
+frontend/dist/
+
+# Assessment inputs (NDA)
+data/*.csv
+data/*.md
+data/corpus/
+
+# Editor / OS
+.vscode/
+.idea/
+Thumbs.db

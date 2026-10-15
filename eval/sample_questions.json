@@ -1,0 +1,16 @@
+{
+  "_note": "Expected labels are written by hand from the packet corpus. ANSWER = expect citations from expected_documents containing expected_phrase. ABSTAIN = expect no citations. Score: correct +1, abstained 0, wrong -1.",
+  "questions": [
+    {"id": 1, "question": "What is the first-line antibiotic, dose basis, and duration for acute otitis media in a child?", "expect": "ANSWER", "expected_documents": ["STW-PED-01"], "expected_phrase": "Amoxicillin 40 mg/kg/day"},
+    {"id": 2, "question": "A 6-year-old with non-severe community pneumonia: what is the amoxicillin dose exactly as the workflow states it?", "expect": "ANSWER", "expected_documents": ["STW-PED-02"], "expected_phrase": "40 mg/kg/day"},
+    {"id": 3, "question": "What is the first-line initial drug therapy for newly diagnosed adult hypertension?", "expect": "ANSWER", "expected_documents": ["STW-GP-02"], "expected_phrase": "Amlodipine 5 mg"},
+    {"id": 4, "question": "Which analgesic class must be avoided in suspected dengue, and why?", "expect": "ANSWER", "expected_documents": ["STW-GP-04"], "expected_phrase": "AVOID Ibuprofen"},
+    {"id": 5, "question": "What are the ORS volumes after each loose stool for a child aged 2-10 years, and what zinc course accompanies it?", "expect": "ANSWER", "expected_documents": ["STW-PED-03"], "expected_phrase": "200 ml"},
+    {"id": 6, "question": "Which red flags in acute low back pain mandate imaging or referral?", "expect": "ANSWER", "expected_documents": ["STW-ORT-01"], "expected_phrase": "Saddle anaesthesia"},
+    {"id": 7, "question": "Which urinary antibiotic is avoided at 36+ weeks of pregnancy, and what is the stated alternative?", "expect": "ANSWER", "expected_documents": ["STW-GYN-02"], "expected_phrase": "Nitrofurantoin near term"},
+    {"id": 8, "question": "At what HbA1c threshold at diagnosis does the workflow add a second agent to metformin, and which agent?", "expect": "ANSWER", "expected_documents": ["STW-GP-03"], "expected_phrase": "8.5%"},
+    {"id": 9, "question": "What is the first-line prophylactic drug for migraine in adults?", "expect": "ABSTAIN", "expected_documents": [], "expected_phrase": ""},
+    {"id": 10, "question": "What is the standard drug regimen for newly diagnosed pulmonary tuberculosis?", "expect": "ABSTAIN", "expected_documents": [], "expected_phrase": ""},
+    {"id": 11, "question": "Per the clinic's own protocol, when are empirical antibiotics started in adult acute undifferentiated fever, and does the national workflow pack say the same? Label your sources.", "expect": "ANSWER", "expected_documents": ["SOP-CLIN-014"], "expected_phrase": "Day 2"}
+  ]
+}
