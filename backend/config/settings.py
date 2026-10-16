@@ -65,7 +65,7 @@ DATABASES = {
         "ENGINE": "django.db.backends.mysql",
         "NAME": os.environ.get("DB_DATABASE", "astroum_ai_db"),
         "USER": os.environ.get("DB_USERNAME", "root"),
-        "PASSWORD": os.environ.get("DB_PASSWORD", "123456789"),
+        "PASSWORD": os.environ.get("DB_PASSWORD", "password"),
         "HOST": os.environ.get("DB_HOST", "127.0.0.1"),
         "PORT": os.environ.get("DB_PORT", "3306"),
         # utf8mb4: the pharmacy stock file contains Telugu billing strings.
