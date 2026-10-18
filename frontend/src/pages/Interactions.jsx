@@ -64,7 +64,7 @@ export default function Interactions() {
       <section className="panel">
         <h2>Seed list (what the check can actually find)</h2>
         <Panel loading={seeds.loading} error={seeds.error}>
-          {seeds.data && (
+          {Array.isArray(seeds.data) && seeds.data.length > 0 ? (
             <table className="table compact">
               <thead><tr><th>Ingredient A</th><th>Ingredient B</th><th>Severity</th><th>Note</th></tr></thead>
               <tbody>
@@ -78,6 +78,8 @@ export default function Interactions() {
                 ))}
               </tbody>
             </table>
+          ) : (
+            <p>No seed data available.</p>
           )}
         </Panel>
       </section>
